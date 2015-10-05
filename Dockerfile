@@ -28,8 +28,9 @@ ADD apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 # Configure /app folder with sample app
-ADD index.php /app/index.php
-ADD im_stat.php /app/im_stat.php
+#ADD index.php /app/index.php
+#ADD im_stat.php /app/im_stat.php
+ADD *.php /app/
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 
 #Enviornment variables to configure php
