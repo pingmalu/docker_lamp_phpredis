@@ -21,6 +21,3 @@ sed -ri -e "s/^upload_max_filesize.*/upload_max_filesize = ${PHP_UPLOAD_MAX_FILE
 # fi
 
 exec supervisord -n
-
-
-exec redis-server /etc/redis/redis.conf
