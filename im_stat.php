@@ -10,8 +10,7 @@ $IM_ROOM = array(
 );
 
 $redis = new redis();  
-$redis->connect('REDIS_HOST', REDIS_PORT);
-$result = $redis->auth('REDIS_PASS');
+$result = $redis->connect('localhost', 6379);
 if($result){
         $pipe = $redis->multi(Redis::PIPELINE);
         foreach ($IM_ROOM as $key=>$value) {
@@ -19,8 +18,8 @@ if($result){
         }   
         $result = $pipe->exec();
         //var_dump($result);
-}
-
+}        
+          
 if($result){
         $i=0;
         foreach ($IM_ROOM as $key=>$value) {
@@ -31,6 +30,8 @@ if($result){
                 $i++;
         }   
         //var_dump($IM_ROOM);
-}
-echo json_encode($IM_ROOM);
+}   
+$json_result = json_encode($IM_ROOM);
+echo $json_result;
+//$rlocal->setex($IM,2,$json_result);                                                                                                                     
 ?>

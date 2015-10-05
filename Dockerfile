@@ -39,6 +39,8 @@ ENV PHP_POST_MAX_SIZE 10M
 
 # Add volumes for MySQL 
 #VOLUME  ["/etc/mysql", "/var/lib/mysql" ]
+#CMD ["redis-server", "/etc/redis/redis.conf"]
+
 
 #EXPOSE 80 3306
 EXPOSE 80
