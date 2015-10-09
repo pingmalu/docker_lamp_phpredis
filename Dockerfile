@@ -42,6 +42,5 @@ ENV PHP_POST_MAX_SIZE 10M
 #CMD ["redis-server", "/etc/redis/redis.conf"]
 
 
-#EXPOSE 80 3306
-EXPOSE 80
+EXPOSE 80 6379
 CMD ["/run.sh"]

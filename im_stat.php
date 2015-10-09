@@ -10,7 +10,8 @@ $IM_ROOM = array(
 );
 
 $redis = new redis();  
-$result = $redis->connect('localhost', 6379);
+$redis->connect('localhost', 6379);
+$result = $redis->auth('REDIS_PASS');
 if($result){
         $pipe = $redis->multi(Redis::PIPELINE);
         foreach ($IM_ROOM as $key=>$value) {

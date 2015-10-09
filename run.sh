@@ -4,7 +4,8 @@
 
 #sed 's/REDIS_HOST/'$REDIS_HOST'/g' -i /app/im_stat.php
 #sed 's/REDIS_PORT/'$REDIS_PORT'/g' -i /app/im_stat.php
-#sed 's/REDIS_PASS/'$REDIS_PASS'/g' -i /app/im_stat.php
+sed 's/REDIS_PASS/'$REDIS_PASS'/g' -i /app/im_stat.php
+sed -i '1i\requirepass '$REDIS_PASS /etc/redis/redis.conf
 sed -i '1i\masterauth '$REDIS_PASS /etc/redis/redis.conf
 sed -i '1i\slaveof '$REDIS_HOST' '$REDIS_PORT /etc/redis/redis.conf
 
